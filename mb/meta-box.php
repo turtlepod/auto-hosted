@@ -395,7 +395,7 @@ function ahs_force_send( $args ) {
  * 
  * @since 0.2.2
  */
-add_filter( 'ahs_validate_file', 'ahs_validate_file' );
+//add_filter( 'ahs_validate_file', 'ahs_validate_file' );
 add_filter( 'ahs_validate_text', 'ahs_validate_text' );
 add_filter( 'ahs_validate_url', 'ahs_validate_url' );
 add_filter( 'ahs_validate_textarea', 'ahs_validate_textarea' );

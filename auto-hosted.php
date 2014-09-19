@@ -3,7 +3,7 @@
  * Plugin Name: Auto Hosted
  * Plugin URI: http://autohosted.com/
  * Description: Automatic Update Manager for Self Hosted WordPress Themes and Plugins.
- * Version: 0.1.7
+ * Version: 0.1.8
  * Author: David Chandra Purnama
  * Author URI: http://shellcreeper.com/
  *
@@ -17,7 +17,7 @@
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package AutoHosted
- * @version 0.1.7
+ * @version 0.1.8
  * @author David Chandra Purnama <david@shellcreeper.com>
  * @copyright Copyright (c) 2013, David Chandra Purnama
  * @link http://autohosted.com
@@ -33,7 +33,7 @@ load_plugin_textdomain( 'auto-hosted', false, dirname( plugin_basename( __FILE__
 ------------------------------------------ */
 
 /* Set plugin version constant. */
-define( 'AUTOHOSTED_VERSION', '0.1.7' );
+define( 'AUTOHOSTED_VERSION', '0.1.8' );
 
 /* Set constant path to the plugin directory. */
 define( 'AUTOHOSTED_PATH', trailingslashit( plugin_dir_path(__FILE__) ) );

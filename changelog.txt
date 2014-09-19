@@ -8,11 +8,15 @@ test using multisite domain mapping, uploader and zip file bug reported by DJose
 woocommerce integration
 @link: http://autohosted.com/forums/topic/integrate-activations-with-woocommerce/
 ---
-Add hooks to make it extendable, need input from members
 
 ==================================
 CHANGELOG:
 ----------------------------------
+
+= version 0.1.8 (25 November 2013) =
+- update to the latest updater (v.0.1.5)
+- remove validation/sanitazion for zip file.
+
 
 = version 0.1.7 (10 November 2013) =
 - fix header already sent, from deactivation/activation hook in wp.3.7 (role management)
