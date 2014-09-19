@@ -1,24 +1,15 @@
 <?php
 /**
- * Update Data
- * 
+ * Check Plugin Update Data
  * @since 0.1.0
  */
+/* get vars */
+$qvar = get_query_var('ahpr_check');
+$user_agent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? trim( $_SERVER['HTTP_USER_AGENT'] ) : '';
+$userlogin = isset( $_POST['login'] ) ? trim( $_POST['login'] ) : '' ;
+$key = isset( $_POST['key'] ) ? trim( $_POST['key'] ) : '' ;
 
-/* get user agent */
-$user_agent = $_SERVER['HTTP_USER_AGENT'];
-
-/* check version and zip package */
-if ( auto_hosted_version_compare( get_query_var('ahpr_check') ) ){
-
-	/* check domain restrict */
-	if ( auto_hosted_validate_domain( $user_agent ) ){
-
-		/* check activation key */
-		if ( auto_hosted_validate_key( $_POST['key'], $user_agent ) ){
-
-			/* display data */
-			auto_hosted_plugin_check();
-		}
-	}
+/* validate request */
+if ( auto_hosted_validate_request( $qvar, $user_agent, $userlogin, $key ) ){
+	auto_hosted_plugin_check();
 }

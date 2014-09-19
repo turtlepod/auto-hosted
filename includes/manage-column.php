@@ -5,7 +5,7 @@
  * @package AutoHosted
  * @subpackage Includes
  * @since 0.1.0
- * @author David Chandra Purnama <david.warna@gmail.com>
+ * @author David Chandra Purnama <david@shellcreeper.com>
  * @copyright Copyright (c) 2013, David Chandra Purnama
  * @link http://autohosted
  * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -25,11 +25,11 @@ function auto_hosted_admin_setup() {
 
 	/* Custom columns on the edit plugin_repo screen. */
 	add_filter( 'manage_plugin_repo_posts_columns', 'auto_hosted_edit_plugin_repo_columns' );
-	add_action( 'manage_plugin_repo_posts_custom_column', 'autohosted_manage_repo_columns', 10, 2 );
+	add_action( 'manage_plugin_repo_posts_custom_column', 'auto_hosted_manage_repo_columns', 10, 2 );
 
 	/* Custom columns on the edit theme_repo screen. */
 	add_filter( 'manage_theme_repo_posts_columns', 'auto_hosted_edit_theme_repo_columns' );
-	add_action( 'manage_theme_repo_posts_custom_column', 'autohosted_manage_repo_columns', 10, 2 );
+	add_action( 'manage_theme_repo_posts_custom_column', 'auto_hosted_manage_repo_columns', 10, 2 );
 
 	/* head css and script */
 	add_action( 'admin_head', 'auto_hosted_admin_head_style' );
@@ -93,7 +93,7 @@ function auto_hosted_edit_theme_repo_columns( $columns ) {
  *
  * @since  0.1.0
  */
-function autohosted_manage_repo_columns( $column, $post_id ) {
+function auto_hosted_manage_repo_columns( $column, $post_id ) {
 	global $post;
 
 	/* ID */

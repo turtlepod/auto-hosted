@@ -7,6 +7,8 @@
  * @since 0.1.0
  */
 
+/* QUERY VAR
+--------------------------------------------------------------- */
 
 /* Add query variable so wordpress recognize it */
 add_filter( 'query_vars', 'auto_hosted_add_query_variable' );
@@ -14,8 +16,8 @@ add_filter( 'query_vars', 'auto_hosted_add_query_variable' );
 
 /**
  * Add Query Vars, so WordPress could recognize it.
- * 
  * @since 0.1.0
+ * @return array of WordPress query var.
  */
 function auto_hosted_add_query_variable( $vars ){
 
@@ -38,14 +40,18 @@ function auto_hosted_add_query_variable( $vars ){
 }
 
 
+
+/* TEMPLATE INCLUDES
+--------------------------------------------------------------- */
+
 /* Override Singular Plugin and Theme Repo */
 add_filter( 'template_include', 'auto_hosted_template_include' ) ;
 
 
 /**
  * Replace Singular Template for Plugin Repo based on custom query var.
- * 
  * @since 0.1.0
+ * @return string of template used by the repo.
  */
 function auto_hosted_template_include( $template ){
 
@@ -63,9 +69,6 @@ function auto_hosted_template_include( $template ){
 
 	/* get plugin activation key */
 	$check_key = get_query_var( 'ahr_check_key' );
-
-	/* get theme download var */
-	$download = get_query_var( 'ahr_download' );
 
 	/* in singular plugin repo */
 	if ( is_singular('plugin_repo') ){
@@ -132,189 +135,8 @@ function auto_hosted_template_include( $template ){
 }
 
 
-/**
- * Initial Check for data request.
- * this will check for input and zip package input.
- * 
- * @since 0.1.0
- * @return bool
- */
-function auto_hosted_initial_check(){
-
-	/* default output */
-	$output = false;
-
-	/* get id */
-	$id = get_queried_object_id();
-
-	/* only if id isset, and not empty */
-	if ( isset( $id ) && !empty ( $id ) ){
-
-		/* zip file input */
-		$zip = get_post_meta( $id, 'download_link', true );
-
-		/* version */
-		$version = get_post_meta( $id, 'version', true );
-
-		/* disable */
-		$disable = get_post_meta( $id, 'disable_update', true );
-
-		/* only pass this check if minimum data exist */
-		if ( $zip && $version && !$disable )
-			$output = true;
-	}
-
-	/* output */
-	return apply_filters( 'auto_hosted_initial_check', $output );
-}
-
-
-
-
-/**
- * Version Compare. Initial check for available update.
- * Compare current version and latest version of theme/plugin.
- * Also check if plugin zip is available and if update is not disable.
- * 
- * @since 0.1.0
- */
-function auto_hosted_version_compare( $current_version ){
-
-	/* default output */
-	$output = false;
-
-	/* get id */
-	$id = get_queried_object_id();
-
-	/* only if id isset, and not empty */
-	if ( isset( $id ) && !empty ( $id ) ){
-
-		/* get latest version from plugin data */
-		$latest_version = get_post_meta( $id, 'version', true );
-
-		/* compare plugin version version */
-		if ( version_compare( $current_version, $latest_version, '<' ) ) {
-			$output = true;
-		}
-	}
-
-	/* output */
-	return apply_filters( 'auto_hosted_version_compare', $output);
-}
-
-
-
-/**
- * Validate domain request from domain restrict using user agent.
- * 
- * @since 0.1.0
- */
-function auto_hosted_validate_domain( $user_agent ){
-
-	/* default */
-	$output = false;
-
-	/* "WordPress" need to be in user agent string */
-	if ( stristr( $user_agent, 'WordPress' ) == TRUE ) {
-
-		/* domain restrict */
-		$whitelist_domains = auto_hosted_restrict_domain();
-
-		/* get user agent domain */
-		$resp = explode( ";" , $user_agent );
-
-		/* domain request */
-		$get_domain = esc_url_raw( trim( $resp[1] ) );
-
-		/* parse url */
-		$parse_domain = parse_url( $get_domain );
-
-		/* domain name only */
-		$domain_from = $parse_domain['host'];
-
-		/* check if it's in array of whitelist domain */
-		if ( empty( $whitelist_domains ) || in_array( $domain_from, $whitelist_domains ) ){
-			$output = true;
-		}
-	}
-
-	return $output;
-}
-
-
-/**
- * Validate Activation Keys.
- * 
- * @since 0.1.0
- */
-function auto_hosted_validate_key( $key, $user_agent ){
-
-	/* default */
-	$output = true;
-
-	/* list of activation keys */
-	$keys = auto_hosted_activation_keys();
-
-	/* false, if activation key list is not empty, or key is not valid */
-	if ( $keys && !in_array( $key, $keys ) ){
-		$output = false;
-	}
-
-	/* get list of whitelist domain */
-	$whitelist_domains = auto_hosted_whitelist_domain();
-
-	/* if whitelist domain is not empty */
-	if ( $whitelist_domains ){
-
-		/* get user agent domain */
-		$resp = explode( ";" , $user_agent );
-
-		/* domain request */
-		$get_domain = esc_url_raw( trim( $resp[1] ) );
-
-		/* parse url */
-		$parse_domain = parse_url( $get_domain );
-
-		/* domain name only */
-		$domain_from = $parse_domain['host'];
-
-		/* true, if domain from is exist in list */
-		if ( in_array( $domain_from, $whitelist_domains ) ){
-			$output = true;
-		}
-	}
-
-	return $output;
-}
-
-
-/**
- * Download URL
- * 
- * @since 0.1.0
- */
-function auto_hosted_download_url(){
-
-	/* get id */
-	$id = get_queried_object_id();
-
-	/* empty default */
-	$download_url = '';
-
-	/* only if id isset, and not empty */
-	if ( isset( $id ) && !empty ( $id ) ){
-
-		/* download url */
-		$download_link = get_post_meta( $id, 'download_link', true );
-
-		/* check if zip package exist */
-		if ( $download_link ) {
-			$download_url = $download_link;
-		}
-	}
-	return $download_url;
-}
-
+/* PLUGIN CHECK DATA
+--------------------------------------------------------------- */
 
 /**
  * Update Check. This data is for "update_plugins" transient data. 
@@ -337,12 +159,16 @@ function auto_hosted_plugin_check(){
 		$update_info->new_version = get_post_meta( $id, 'version', true );
 
 		/* zip package url */
-		$update_info->package = auto_hosted_download_url();
+		$update_info->package = get_post_meta( $id, 'download_link', true );
 
 		/* print the data */
 		print serialize( $update_info );
 	}
 }
+
+
+/* PLUGIN INFORMATION
+--------------------------------------------------------------- */
 
 
 /**
@@ -368,7 +194,7 @@ function auto_hosted_plugin_information(){
 		$info->last_updated = get_post_meta( $id, 'last_updated', true );
 
 		/* zip url */
-		$info->download_link = auto_hosted_download_url();
+		$info->download_link = esc_url( get_post_meta( $id, 'download_link', true ) );
 
 		/* wp version requires */
 		$info->requires = get_post_meta( $id, 'requires', true );
@@ -383,6 +209,70 @@ function auto_hosted_plugin_information(){
 		print serialize( $info );
 	}
 }
+
+
+/**
+ * Plugin Sections
+ * @since 0.1.0
+ * @return array of plugin sections
+ */
+function auto_hosted_plugin_sections(){
+
+	/* get id */
+	$id = get_queried_object_id();
+
+	/* build sections */
+	$sections = array();
+
+	/* descriptions */
+	if ( get_post_meta( $id, 'section_description', true ) )
+		$sections['description'] = auto_hosted_sanitize_section( get_post_meta( $id, 'section_description', true ) );
+
+	/* faq */
+	if ( get_post_meta( $id, 'section_faq', true ) )
+		$sections['faq'] = auto_hosted_sanitize_section( get_post_meta( $id, 'section_faq', true ) );
+
+	/* screenshots */
+	if ( get_post_meta( $id, 'section_screenshots', true ) )
+		$sections['screenshots'] = auto_hosted_sanitize_section( get_post_meta( $id, 'section_screenshots', true ) );
+
+	/* changelog */
+	if ( get_post_meta( $id, 'section_changelog', true ) )
+		$sections['changelog'] = auto_hosted_sanitize_section( get_post_meta( $id, 'section_changelog', true ) );
+
+	/* other_notes */
+	if ( get_post_meta( $id, 'section_other_notes', true ) )
+		$sections['other_notes'] = auto_hosted_sanitize_section( get_post_meta( $id, 'section_other_notes', true ) );
+
+	return $sections;
+}
+
+
+/**
+ * Sanitize Plugin Sections Datam just to make sure it's proper data.
+ * This is a helper function to sanitize plugin sections data to send to user site.
+ * @since 0.1.0
+ * @return string of sanitized section data
+ */
+function auto_hosted_sanitize_section( $input ){
+
+	/* allowed tags */
+	$sections_allowedtags = array(
+		'a' => array( 'href' => array(), 'title' => array(), 'target' => array() ),
+		'abbr' => array( 'title' => array() ), 'acronym' => array( 'title' => array() ),
+		'code' => array(), 'pre' => array(), 'em' => array(), 'strong' => array(),
+		'div' => array(), 'p' => array(), 'ul' => array(), 'ol' => array(), 'li' => array(),
+		'h1' => array(), 'h2' => array(), 'h3' => array(), 'h4' => array(), 'h5' => array(), 'h6' => array(),
+		'img' => array( 'src' => array(), 'class' => array(), 'alt' => array() )
+	);
+
+	$output = wp_kses( $input, $sections_allowedtags);
+	return $output;
+}
+
+
+/* THEME CHECK
+--------------------------------------------------------------- */
 
 
 /**
@@ -406,10 +296,10 @@ function auto_hosted_theme_check(){
 		$update_info['new_version'] = get_post_meta( $id, 'version', true );
 
 		/* zip package url */
-		$update_info['package'] = auto_hosted_download_url();
+		$update_info['package'] = get_post_meta( $id, 'download_link', true );
 
 		/* update detail url */
-		$update_info['url'] = auto_hosted_theme_detail_url();
+		$update_info['url'] = auto_hosted_theme_detail_url( $id );
 
 		/* print the data */
 		print serialize( $update_info );
@@ -422,33 +312,31 @@ function auto_hosted_theme_check(){
  * 
  * @since 0.1.0
  */
-function auto_hosted_theme_detail_url(){
-
-	/* get id */
-	$id = get_queried_object_id();
+function auto_hosted_theme_detail_url( $id ){
 
 	/* empty as open sesame. */
 	$url = '';
 
-	/* only if id isset, and not empty */
-	if ( isset( $id ) && !empty ( $id ) ){
-
-		/* check if theme changelog url input exist */
-		if ( get_post_meta( $id, 'theme_changelog_url', true ) ) {
-			$url = esc_url_raw( get_post_meta( $id, 'theme_changelog_url', true ) );
-		}
-
-		/* check changelog input */
-		elseif ( get_post_meta( $id, 'theme_changelog', true ) ) {
-
-			/* construct url */
-			$extrapostdata = get_post(get_the_ID(), ARRAY_A);
-			$slug = $extrapostdata['post_name'];
-			$url = add_query_arg( array( 'theme_repo' => $slug, 'ahtr_info' => 'changelog' ), trailingslashit( home_url() ) );
-		}
+	/* check if theme changelog url input exist */
+	if ( get_post_meta( $id, 'theme_changelog_url', true ) ) {
+		$url = esc_url_raw( get_post_meta( $id, 'theme_changelog_url', true ) );
 	}
+
+	/* check changelog input */
+	elseif ( get_post_meta( $id, 'theme_changelog', true ) ) {
+
+		/* construct url */
+		$extrapostdata = get_post(get_the_ID(), ARRAY_A);
+		$slug = $extrapostdata['post_name'];
+		$url = add_query_arg( array( 'theme_repo' => $slug, 'ahtr_info' => 'changelog' ), trailingslashit( home_url() ) );
+	}
+
 	return $url;
 }
+
+
+/* THEME INFORMATION
+--------------------------------------------------------------- */
 
 
 /**

@@ -53,14 +53,14 @@ jQuery(document).ready(function ($) {
 				itemid = ""; // TO DO: Get ID for non-image attachments.
 			}
 
-			image = /(jpe?g|png|gif|ico)$/gi;
+			image = /(zip)$/gi;
 
 			if (itemurl.match(image)) {
-				uploadStatus = '<div class="img_status"><img src="' + itemurl + '" alt="" /><a href="#" class="ahs_remove_file_button" rel="' + formfield + '">Remove Image</a></div>';
-			} else {
-				// No output preview if it's not an image
-				// Standard generic output if it's not an image.
 				html = '<a href="' + itemurl + '" target="_blank" rel="external">View File</a>';
+				uploadStatus = '<div class="no_image"><span class="file_link">' + html + '</span>&nbsp;&nbsp;&nbsp;<a href="#" class="ahs_remove_file_button" rel="' + formfield + '">Remove</a></div>';
+			} else {
+				// If it's not zip file, add notice.
+				html = '<span style="color:red">Only zip file is supported</span> ';
 				uploadStatus = '<div class="no_image"><span class="file_link">' + html + '</span>&nbsp;&nbsp;&nbsp;<a href="#" class="ahs_remove_file_button" rel="' + formfield + '">Remove</a></div>';
 			}
 

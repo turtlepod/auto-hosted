@@ -1,0 +1,22 @@
+AUTO HOSTED PLUGIN CHANGELOG
+==================================
+
+= version 0.1.3 (24 April 2013) =
+- change function name to make it consistent with the rest.
+- update language file
+- update to plugin updater class 0.1.3
+
+
+= version 0.1.2 (19 April 2013) =
+- fix bug and typo in verify request.
+
+
+= version 0.1.1 (19 April 2013) =
+- better performance in restrict update by members (role).
+- fix bug in restrict update white listed domain.
+- fix functions name of updater init.
+- update only available for autohosted.com members.
+
+
+= version 0.1.0 =
+- initial release

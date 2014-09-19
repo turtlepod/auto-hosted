@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: Auto Hosted
- * Plugin URI: http://autohosted.com
- * Description: Automatic Plugin and Theme Updater Repository.
- * Version: 0.1.0
+ * Plugin URI: http://autohosted.com/
+ * Description: Automatic Update Manager for Self Hosted WordPress Themes and Plugins.
+ * Version: 0.1.3
  * Author: David Chandra Purnama
  * Author URI: http://shellcreeper.com/
  *
@@ -17,15 +17,15 @@
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package AutoHosted
- * @version 0.1.0
- * @since 0.1.0
+ * @version 0.1.3
  * @author David Chandra Purnama <david@shellcreeper.com>
  * @copyright Copyright (c) 2013, David Chandra Purnama
  * @link http://autohosted.com
  * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-/* Language */
+/* Language: text domain
+------------------------------------------ */
 load_plugin_textdomain( 'auto-hosted', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 
@@ -33,7 +33,7 @@ load_plugin_textdomain( 'auto-hosted', false, dirname( plugin_basename( __FILE__
 ------------------------------------------ */
 
 /* Set plugin version constant. */
-define( 'AUTOHOSTED_VERSION', '0.1.0' );
+define( 'AUTOHOSTED_VERSION', '0.1.3' );
 
 /* Set constant path to the plugin directory. */
 define( 'AUTOHOSTED_PATH', trailingslashit( plugin_dir_path(__FILE__) ) );
@@ -45,26 +45,14 @@ define( 'AUTOHOSTED_URI', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 /* Load Functions
 ------------------------------------------ */
 
-/* initiate metabox class */
-add_action( 'after_setup_theme', 'auto_hosted_meta_boxes_init',99 );
-
-/**
- * Load Metabox Class
- * @since 0.1.0
- */
-function auto_hosted_meta_boxes_init() {
-	require_once( AUTOHOSTED_PATH . 'mb/meta-box.php' );
-}
-
+/* Load Meta box Helper Class */
+require_once( AUTOHOSTED_PATH . 'mb/meta-box.php' );
 
 /* Load register post types function */
 require_once( AUTOHOSTED_PATH . 'includes/post-types.php' );
 
 /* Load register taxonomies function */
 require_once( AUTOHOSTED_PATH . 'includes/taxonomies.php' );
-
-/* Load functions */
-require_once( AUTOHOSTED_PATH . 'includes/functions.php' );
 
 /* Load meta boxes and metadata functions */
 require_once( AUTOHOSTED_PATH . 'includes/meta-boxes.php' );
@@ -73,26 +61,39 @@ require_once( AUTOHOSTED_PATH . 'includes/meta-boxes.php' );
 require_once( AUTOHOSTED_PATH . 'includes/manage-column.php' );
 
 
+
+/* Load functions */
+require_once( AUTOHOSTED_PATH . 'includes/functions.php' );
+
+/* Load validate request functions */
+require_once( AUTOHOSTED_PATH . 'includes/validate-request.php' );
+
+/* Load validate activation key check functions */
+require_once( AUTOHOSTED_PATH . 'includes/validate-check-key.php' );
+
+
 /* Updater
 ------------------------------------------ */
 
 /* Hook updater to init */
-add_action( 'init', 'cpt_docs_updater_init' );
+add_action( 'init', 'auto_hosted_updater_init' );
 
 /**
  * Load and Activate Plugin Updater Class.
  * @since 0.1.0
  */
-function cpt_docs_updater_init() {
+function auto_hosted_updater_init() {
 
 	/* Load Plugin Updater */
 	require_once( AUTOHOSTED_PATH . 'includes/updater.php' );
 
 	/* Updater Config */
 	$config = array(
-		'base'		=> plugin_basename( __FILE__ ), //required
-		'repo_uri'	=> 'http://repo.shellcreeper.com/',
-		'repo_slug'	=> 'auto-hosted',
+		'base'       => plugin_basename( __FILE__ ), //required
+		'repo_uri'   => 'http://autohosted.com/', //required
+		'repo_slug'  => 'auto-hosted',
+		'dashboard'  => true,
+		'username'   => true,
 	);
 
 	/* Load Updater Class */
@@ -113,6 +114,16 @@ register_activation_hook( __FILE__, 'auto_hosted_activation' );
  */
 function auto_hosted_activation() {
 
+	/* check if other instance of auto hosted active */
+	if ( defined( 'AUTOHOSTED_ACTIVE' ) ) {
+
+		/* deactivate plugin */
+		deactivate_plugins( plugin_basename( __FILE__ ) );
+
+		/* notice to user, error message */
+		wp_die( sprintf( __( 'You need to deactivate Auto Hosted Lite before activating <a href="%s">Auto Hosted</a> plugin.', 'auto-hosted'), 'http://autohosted.com/' ) );
+	}
+
 	/* Get the administrator role. */
 	$role =& get_role( 'administrator' );
 
@@ -128,6 +139,19 @@ function auto_hosted_activation() {
 
 	/* uninstall plugin */
 	register_uninstall_hook( __FILE__, 'auto_hosted_uninstall' );
+}
+
+
+/* Add active status constant to init hook */
+add_action( 'init', 'auto_hosted_active_check_init', 1 );
+
+/**
+ * Auto Hosted Active Status Constants
+ * this is to make sure user deactivate lite version before activate this
+ * @since 0.1.1
+ */
+function auto_hosted_active_check_init(){
+	define( 'AUTOHOSTED_ACTIVE', true );
 }
 
 

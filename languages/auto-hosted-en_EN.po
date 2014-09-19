@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto Hosted\n"
+"Project-Id-Version: AutoHosted.com\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-10 23:21+0700\n"
+"POT-Creation-Date: 2013-04-25 14:50+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: dave <david.warna@gmail.com>\n"
 "Language-Team:  <david@shellcreeper.com>\n"
@@ -14,6 +14,11 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: auto-hosted.php:124
+#, php-format
+msgid "You need to deactivate Auto Hosted Lite before activating <a href=\"%s\">Auto Hosted</a> plugin."
+msgstr ""
 
 #: includes/manage-column.php:56
 msgctxt "edit"
@@ -697,23 +702,76 @@ msgctxt "theme-tag"
 msgid "Choose from the most used tags"
 msgstr ""
 
-#: includes/updater.php:238
+#: includes/updater.php:312
 msgid "An Unexpected HTTP Error occurred during the API request."
 msgstr ""
 
-#: includes/updater.php:238
+#: includes/updater.php:312
+#: includes/updater.php:477
 msgid "Try again"
 msgstr ""
 
-#: includes/updater.php:279
+#: includes/updater.php:353
 msgid "An unknown error occurred"
 msgstr ""
 
-#: includes/updater.php:315
+#: includes/updater.php:389
 msgid "The plugin has been updated, but could not be reactivated. Please reactivate it manually."
 msgstr ""
 
-#: includes/updater.php:316
-msgid "Plugin reactivated successfully."
+#: includes/updater.php:390
+msgid "Plugin reactivated successfully. "
+msgstr ""
+
+#: includes/updater.php:412
+msgid " Plugin Updates"
+msgstr ""
+
+#: includes/updater.php:451
+msgid "Username: "
+msgstr ""
+
+#: includes/updater.php:455
+msgid "Email: "
+msgstr ""
+
+#: includes/updater.php:461
+msgid "Key: "
+msgstr ""
+
+#: includes/updater.php:467
+msgid "<p>Your plugin update is <span style=\"color:green\">active</span></p>"
+msgstr ""
+
+#: includes/updater.php:471
+msgid "<p>Your input is <span style=\"color:red\">not valid</span>, automatic updates is <span style=\"color:red\">not active</span>.</p>"
+msgstr ""
+
+#: includes/updater.php:472
+msgid "Edit Key"
+msgstr ""
+
+#: includes/updater.php:476
+msgid "<p>Unable to validate update activation.</p>"
+msgstr ""
+
+#: includes/updater.php:482
+msgid "Add Key"
+msgstr ""
+
+#: includes/updater.php:567
+msgid "User name"
+msgstr ""
+
+#: includes/updater.php:573
+msgid "Email"
+msgstr ""
+
+#: includes/updater.php:578
+msgid "Please input your AutoHosted.com user login-name and email to activate automatic updates."
+msgstr ""
+
+#: includes/updater.php:583
+msgid "Activation Key"
 msgstr ""
 

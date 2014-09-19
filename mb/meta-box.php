@@ -13,17 +13,15 @@
  * @package 	AutoHosted
  * @copyright	Copyright (c) 2012, David Chandra Purnama
  * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version		0.2.0
+ * @version		0.1.0
  */
-
-
 if ( ! class_exists( 'Auto_Hosted_Metabox_Validate' ) ){
 
 /**
- * Get Metaboxes from theme.
- * 
+ * Create Metaboxes.
+ * @since 0.1.0
  */
-add_action('init','auto_hosted_metabox_create');
+add_action('init','auto_hosted_metabox_create' );
 function auto_hosted_metabox_create(){
 	static $meta_boxes = null;
 
@@ -45,7 +43,7 @@ function auto_hosted_metabox_create(){
  */
 class Auto_Hosted_Metabox_Validate {
 	function check_text( $text ) {
-		if ($text != 'hello') {
+		if ( $text != 'hello' ) {
 			return false;
 		}
 		return true;
