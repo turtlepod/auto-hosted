@@ -1,0 +1,54 @@
+.updater-home-url{
+	background: no-repeat left center;
+	background-image: url(../images/home.png);
+	padding-left: 22px;
+}
+.updater-home-url input{
+	width: 300px;
+	color:#555 !important;
+}
+.update-status{
+	display:inline;
+	font-size:10px;
+	padding:2px;
+	margin-left:5px;
+	background:#d9ffe2;
+	border-radius: 3px;
+	border: 1px solid #63fd87;
+}
+.update-status-incomplete{
+	background:#ffd4ae;
+	border: 1px solid #ffa04b;
+}
+.update-status-disabled{
+	background:#ffa8b0;
+	border: 1px solid #f75867;
+}
+.download-protected{
+	background:no-repeat left center;
+	background-image: url(../images/lock.png);
+	padding-left:14px;
+}
+.extra-update-data{
+	margin:5px 0;
+}
+.update-data-slug{
+	color:#555 !important;
+}
+.key-needed,
+.user-key,
+.domain-restricted{
+	background-image: url(../images/key.png);
+	width:16px;
+	height:16px;
+	display:inline-block;
+	margin:3px;
+	vertical-align: middle;
+	float:none;
+}
+.user-key{
+	background-image: url(../images/user.png);
+}
+.domain-restricted{
+	background-image: url(../images/domain.png);
+}

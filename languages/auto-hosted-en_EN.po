@@ -1,0 +1,719 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Auto Hosted\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-10 23:21+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: dave <david.warna@gmail.com>\n"
+"Language-Team:  <david@shellcreeper.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_US\n"
+"X-Poedit-KeywordsList: _e;__;esc_attr_e;esc_attr__;esc_html_e;esc_html__;_x;_n;_x:1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/manage-column.php:56
+msgctxt "edit"
+msgid "Plugins"
+msgstr ""
+
+#: includes/manage-column.php:59
+#: includes/manage-column.php:83
+msgctxt "edit"
+msgid "Info"
+msgstr ""
+
+#: includes/manage-column.php:60
+#: includes/manage-column.php:84
+msgctxt "edit"
+msgid "Categories"
+msgstr ""
+
+#: includes/manage-column.php:61
+#: includes/manage-column.php:85
+msgctxt "edit"
+msgid "Tags"
+msgstr ""
+
+#: includes/manage-column.php:80
+msgctxt "edit"
+msgid "Themes"
+msgstr ""
+
+#: includes/manage-column.php:104
+msgctxt "edit"
+msgid "N/A"
+msgstr ""
+
+#: includes/manage-column.php:110
+msgctxt "edit"
+msgid "Download"
+msgstr ""
+
+#: includes/manage-column.php:114
+msgctxt "edit"
+msgid "incomplete"
+msgstr ""
+
+#: includes/manage-column.php:117
+msgctxt "edit"
+msgid "available"
+msgstr ""
+
+#: includes/manage-column.php:121
+msgctxt "edit"
+msgid "disabled"
+msgstr ""
+
+#: includes/meta-boxes.php:25
+msgctxt "metabox"
+msgid "Updater Config"
+msgstr ""
+
+#: includes/meta-boxes.php:35
+msgctxt "metabox"
+msgid "For your updater config, you can edit this from slug meta box."
+msgstr ""
+
+#: includes/meta-boxes.php:41
+msgctxt "metabox"
+msgid "For your updater config, this is your site home url."
+msgstr ""
+
+#: includes/meta-boxes.php:49
+msgctxt "metabox"
+msgid "Plugin Update Data"
+msgstr ""
+
+#: includes/meta-boxes.php:56
+#: includes/meta-boxes.php:104
+msgctxt "metabox"
+msgid "Version"
+msgstr ""
+
+#: includes/meta-boxes.php:59
+msgctxt "metabox"
+msgid "Latest version of your plugin"
+msgstr ""
+
+#: includes/meta-boxes.php:62
+msgctxt "metabox"
+msgid "Release Date"
+msgstr ""
+
+#: includes/meta-boxes.php:65
+msgctxt "metabox"
+msgid "Latest version release date (YYYY-MM-DD)"
+msgstr ""
+
+#: includes/meta-boxes.php:68
+msgctxt "metabox"
+msgid "WP required"
+msgstr ""
+
+#: includes/meta-boxes.php:71
+msgctxt "metabox"
+msgid "Required WordPress Version"
+msgstr ""
+
+#: includes/meta-boxes.php:74
+msgctxt "metabox"
+msgid "WP tested"
+msgstr ""
+
+#: includes/meta-boxes.php:77
+msgctxt "metabox"
+msgid "Tested WordPress Version"
+msgstr ""
+
+#: includes/meta-boxes.php:80
+msgctxt "metabox"
+msgid "Plugin ZIP"
+msgstr ""
+
+#: includes/meta-boxes.php:83
+#: includes/meta-boxes.php:113
+msgctxt "metabox"
+msgid "Input URL to plugin zip file or upload it."
+msgstr ""
+
+#: includes/meta-boxes.php:86
+#: includes/meta-boxes.php:122
+msgctxt "metabox"
+msgid "Changelog"
+msgstr ""
+
+#: includes/meta-boxes.php:89
+msgctxt "metabox"
+msgid "Plugin Changelog"
+msgstr ""
+
+#: includes/meta-boxes.php:97
+msgctxt "metabox"
+msgid "Theme Update Data"
+msgstr ""
+
+#: includes/meta-boxes.php:107
+msgctxt "metabox"
+msgid "Latest version of your theme"
+msgstr ""
+
+#: includes/meta-boxes.php:110
+msgctxt "metabox"
+msgid "Theme ZIP"
+msgstr ""
+
+#: includes/meta-boxes.php:116
+msgctxt "metabox"
+msgid "Update detail"
+msgstr ""
+
+#: includes/meta-boxes.php:119
+msgctxt "metabox"
+msgid "Theme Changelog URL, Will load in iframe, if empty will use Changelog content input below."
+msgstr ""
+
+#: includes/meta-boxes.php:125
+msgctxt "metabox"
+msgid "Theme Changelog, Will load in iframe, if empty will use your theme uri."
+msgstr ""
+
+#: includes/meta-boxes.php:133
+msgctxt "metabox"
+msgid "Restrict Update"
+msgstr ""
+
+#: includes/meta-boxes.php:140
+msgctxt "metabox"
+msgid "Disable Update"
+msgstr ""
+
+#: includes/meta-boxes.php:143
+msgctxt "metabox"
+msgid "Disable update for this repo."
+msgstr ""
+
+#: includes/meta-boxes.php:146
+msgctxt "metabox"
+msgid "Activation Keys"
+msgstr ""
+
+#: includes/meta-boxes.php:149
+msgctxt "metabox"
+msgid "Activation Key, separate by line."
+msgstr ""
+
+#: includes/meta-boxes.php:152
+msgctxt "metabox"
+msgid "Users email as Key"
+msgstr ""
+
+#: includes/meta-boxes.php:156
+msgctxt "metabox"
+msgid "Select all registered users email in role(s) as Activation Key to get update."
+msgstr ""
+
+#: includes/meta-boxes.php:159
+msgctxt "metabox"
+msgid "Domains Whitelist"
+msgstr ""
+
+#: includes/meta-boxes.php:162
+msgctxt "metabox"
+msgid "Domain Whitelist, separate by line. Subdomain need to be added separately.<br/>Domains in this list will not be checked for Activation Key."
+msgstr ""
+
+#: includes/meta-boxes.php:165
+msgctxt "metabox"
+msgid "Domains Restrict"
+msgstr ""
+
+#: includes/meta-boxes.php:168
+msgctxt "metabox"
+msgid "Restrict Domains, separate by line. Subdomain need to be added separately.<br/>Only domains in this list can use automatic update feature."
+msgstr ""
+
+#: includes/meta-boxes.php:176
+msgctxt "metabox"
+msgid "Plugin Sections"
+msgstr ""
+
+#: includes/meta-boxes.php:183
+msgctxt "metabox"
+msgid "Description"
+msgstr ""
+
+#: includes/meta-boxes.php:186
+msgctxt "metabox"
+msgid "Plugin Description"
+msgstr ""
+
+#: includes/meta-boxes.php:189
+msgctxt "metabox"
+msgid "FAQ"
+msgstr ""
+
+#: includes/meta-boxes.php:192
+msgctxt "metabox"
+msgid "Plugin FAQ"
+msgstr ""
+
+#: includes/meta-boxes.php:195
+msgctxt "metabox"
+msgid "Screenshots"
+msgstr ""
+
+#: includes/meta-boxes.php:198
+msgctxt "metabox"
+msgid "Plugin Screenshots"
+msgstr ""
+
+#: includes/meta-boxes.php:201
+msgctxt "metabox"
+msgid "Other Notes"
+msgstr ""
+
+#: includes/meta-boxes.php:204
+msgctxt "metabox"
+msgid "Plugin Other Notes"
+msgstr ""
+
+#: includes/post-types.php:25
+msgctxt "post-type"
+msgid "Plugins"
+msgstr ""
+
+#: includes/post-types.php:26
+msgctxt "post-type"
+msgid "Plugin Repo"
+msgstr ""
+
+#: includes/post-types.php:27
+#: includes/post-types.php:87
+msgctxt "post-type"
+msgid "Add New"
+msgstr ""
+
+#: includes/post-types.php:28
+msgctxt "post-type"
+msgid "Add New Plugin Repo"
+msgstr ""
+
+#: includes/post-types.php:29
+msgctxt "post-type"
+msgid "Edit Plugin Repo"
+msgstr ""
+
+#: includes/post-types.php:30
+msgctxt "post-type"
+msgid "New Plugin Repo"
+msgstr ""
+
+#: includes/post-types.php:31
+msgctxt "post-type"
+msgid "All Plugin Repo"
+msgstr ""
+
+#: includes/post-types.php:32
+msgctxt "post-type"
+msgid "View Plugin Repo"
+msgstr ""
+
+#: includes/post-types.php:33
+msgctxt "post-type"
+msgid "Search Plugin Repo"
+msgstr ""
+
+#: includes/post-types.php:34
+msgctxt "post-type"
+msgid "No Plugin Repo found"
+msgstr ""
+
+#: includes/post-types.php:35
+msgctxt "post-type"
+msgid "No Plugin Repo found in Trash"
+msgstr ""
+
+#: includes/post-types.php:36
+msgctxt "post-type"
+msgid "Repo | Plugin"
+msgstr ""
+
+#: includes/post-types.php:85
+msgctxt "post-type"
+msgid "Themes"
+msgstr ""
+
+#: includes/post-types.php:86
+msgctxt "post-type"
+msgid "Theme Repo"
+msgstr ""
+
+#: includes/post-types.php:88
+msgctxt "post-type"
+msgid "Add New Theme Repo"
+msgstr ""
+
+#: includes/post-types.php:89
+msgctxt "post-type"
+msgid "Edit Theme Repo"
+msgstr ""
+
+#: includes/post-types.php:90
+msgctxt "post-type"
+msgid "New Theme Repo"
+msgstr ""
+
+#: includes/post-types.php:91
+msgctxt "post-type"
+msgid "All Theme Repo"
+msgstr ""
+
+#: includes/post-types.php:92
+msgctxt "post-type"
+msgid "View Theme Repo"
+msgstr ""
+
+#: includes/post-types.php:93
+msgctxt "post-type"
+msgid "Search Theme Repo"
+msgstr ""
+
+#: includes/post-types.php:94
+msgctxt "post-type"
+msgid "No Theme Repo found"
+msgstr ""
+
+#: includes/post-types.php:95
+msgctxt "post-type"
+msgid "No Theme Repo found in Trash"
+msgstr ""
+
+#: includes/post-types.php:96
+msgctxt "post-type"
+msgid "Repo | Theme"
+msgstr ""
+
+#: includes/taxonomies.php:40
+msgctxt "plugin-cat"
+msgid "Plugin Repo Categories"
+msgstr ""
+
+#: includes/taxonomies.php:41
+msgctxt "plugin-cat"
+msgid "Plugin Repo Category"
+msgstr ""
+
+#: includes/taxonomies.php:42
+msgctxt "plugin-cat"
+msgid "Categories"
+msgstr ""
+
+#: includes/taxonomies.php:43
+msgctxt "plugin-cat"
+msgid "Category"
+msgstr ""
+
+#: includes/taxonomies.php:44
+msgctxt "plugin-cat"
+msgid "Search Categories"
+msgstr ""
+
+#: includes/taxonomies.php:45
+msgctxt "plugin-cat"
+msgid "Popular Categories"
+msgstr ""
+
+#: includes/taxonomies.php:46
+msgctxt "plugin-cat"
+msgid "All Categories"
+msgstr ""
+
+#: includes/taxonomies.php:47
+msgctxt "plugin-cat"
+msgid "Edit Category"
+msgstr ""
+
+#: includes/taxonomies.php:48
+msgctxt "plugin-cat"
+msgid "View Category"
+msgstr ""
+
+#: includes/taxonomies.php:49
+msgctxt "plugin-cat"
+msgid "Update Category"
+msgstr ""
+
+#: includes/taxonomies.php:50
+msgctxt "plugin-cat"
+msgid "Add New Category"
+msgstr ""
+
+#: includes/taxonomies.php:51
+msgctxt "plugin-cat"
+msgid "New Category Name"
+msgstr ""
+
+#: includes/taxonomies.php:52
+msgctxt "plugin-cat"
+msgid "Separate categories with commas"
+msgstr ""
+
+#: includes/taxonomies.php:53
+msgctxt "plugin-cat"
+msgid "Add or remove categories"
+msgstr ""
+
+#: includes/taxonomies.php:54
+msgctxt "plugin-cat"
+msgid "Choose from the most used categories"
+msgstr ""
+
+#: includes/taxonomies.php:78
+msgctxt "plugin-tag"
+msgid "Plugin Repo Tags"
+msgstr ""
+
+#: includes/taxonomies.php:79
+msgctxt "plugin-tag"
+msgid "Plugin Repo Tag"
+msgstr ""
+
+#: includes/taxonomies.php:80
+msgctxt "plugin-tag"
+msgid "Tags"
+msgstr ""
+
+#: includes/taxonomies.php:81
+msgctxt "plugin-tag"
+msgid "Tag"
+msgstr ""
+
+#: includes/taxonomies.php:82
+msgctxt "plugin-tag"
+msgid "Search Tags"
+msgstr ""
+
+#: includes/taxonomies.php:83
+msgctxt "plugin-tag"
+msgid "Popular Tags"
+msgstr ""
+
+#: includes/taxonomies.php:84
+msgctxt "plugin-tag"
+msgid "All Tags"
+msgstr ""
+
+#: includes/taxonomies.php:85
+msgctxt "plugin-tag"
+msgid "Edit Tag"
+msgstr ""
+
+#: includes/taxonomies.php:86
+msgctxt "plugin-tag"
+msgid "View Tag"
+msgstr ""
+
+#: includes/taxonomies.php:87
+msgctxt "plugin-tag"
+msgid "Update Tag"
+msgstr ""
+
+#: includes/taxonomies.php:88
+msgctxt "plugin-tag"
+msgid "Add New Tag"
+msgstr ""
+
+#: includes/taxonomies.php:89
+msgctxt "plugin-tag"
+msgid "New Tag Name"
+msgstr ""
+
+#: includes/taxonomies.php:90
+msgctxt "plugin-tag"
+msgid "Separate tags with commas"
+msgstr ""
+
+#: includes/taxonomies.php:91
+msgctxt "plugin-tag"
+msgid "Add or remove tags"
+msgstr ""
+
+#: includes/taxonomies.php:92
+msgctxt "plugin-tag"
+msgid "Choose from the most used tags"
+msgstr ""
+
+#: includes/taxonomies.php:116
+msgctxt "theme-cat"
+msgid "Theme Repo Categories"
+msgstr ""
+
+#: includes/taxonomies.php:117
+msgctxt "theme-cat"
+msgid "Theme Repo Category"
+msgstr ""
+
+#: includes/taxonomies.php:118
+msgctxt "theme-cat"
+msgid "Categories"
+msgstr ""
+
+#: includes/taxonomies.php:119
+msgctxt "theme-cat"
+msgid "Category"
+msgstr ""
+
+#: includes/taxonomies.php:120
+msgctxt "theme-cat"
+msgid "Search Categories"
+msgstr ""
+
+#: includes/taxonomies.php:121
+msgctxt "theme-cat"
+msgid "Popular Categories"
+msgstr ""
+
+#: includes/taxonomies.php:122
+msgctxt "theme-cat"
+msgid "All Categories"
+msgstr ""
+
+#: includes/taxonomies.php:123
+msgctxt "theme-cat"
+msgid "Edit Category"
+msgstr ""
+
+#: includes/taxonomies.php:124
+msgctxt "theme-cat"
+msgid "View Category"
+msgstr ""
+
+#: includes/taxonomies.php:125
+msgctxt "theme-cat"
+msgid "Update Category"
+msgstr ""
+
+#: includes/taxonomies.php:126
+msgctxt "theme-cat"
+msgid "Add New Category"
+msgstr ""
+
+#: includes/taxonomies.php:127
+msgctxt "theme-cat"
+msgid "New Category Name"
+msgstr ""
+
+#: includes/taxonomies.php:128
+msgctxt "theme-cat"
+msgid "Separate categories with commas"
+msgstr ""
+
+#: includes/taxonomies.php:129
+msgctxt "theme-cat"
+msgid "Add or remove categories"
+msgstr ""
+
+#: includes/taxonomies.php:130
+msgctxt "theme-cat"
+msgid "Choose from the most used categories"
+msgstr ""
+
+#: includes/taxonomies.php:154
+msgctxt "theme-tag"
+msgid "Theme Repo Tags"
+msgstr ""
+
+#: includes/taxonomies.php:155
+msgctxt "theme-tag"
+msgid "Theme Repo Tag"
+msgstr ""
+
+#: includes/taxonomies.php:156
+msgctxt "theme-tag"
+msgid "Tags"
+msgstr ""
+
+#: includes/taxonomies.php:157
+msgctxt "theme-tag"
+msgid "Tag"
+msgstr ""
+
+#: includes/taxonomies.php:158
+msgctxt "theme-tag"
+msgid "Search Tags"
+msgstr ""
+
+#: includes/taxonomies.php:159
+msgctxt "theme-tag"
+msgid "Popular Tags"
+msgstr ""
+
+#: includes/taxonomies.php:160
+msgctxt "theme-tag"
+msgid "All Tags"
+msgstr ""
+
+#: includes/taxonomies.php:161
+msgctxt "theme-tag"
+msgid "Edit Tag"
+msgstr ""
+
+#: includes/taxonomies.php:162
+msgctxt "theme-tag"
+msgid "View Tag"
+msgstr ""
+
+#: includes/taxonomies.php:163
+msgctxt "theme-tag"
+msgid "Update Tag"
+msgstr ""
+
+#: includes/taxonomies.php:164
+msgctxt "theme-tag"
+msgid "Add New Tag"
+msgstr ""
+
+#: includes/taxonomies.php:165
+msgctxt "theme-tag"
+msgid "New Tag Name"
+msgstr ""
+
+#: includes/taxonomies.php:166
+msgctxt "theme-tag"
+msgid "Separate tags with commas"
+msgstr ""
+
+#: includes/taxonomies.php:167
+msgctxt "theme-tag"
+msgid "Add or remove tags"
+msgstr ""
+
+#: includes/taxonomies.php:168
+msgctxt "theme-tag"
+msgid "Choose from the most used tags"
+msgstr ""
+
+#: includes/updater.php:238
+msgid "An Unexpected HTTP Error occurred during the API request."
+msgstr ""
+
+#: includes/updater.php:238
+msgid "Try again"
+msgstr ""
+
+#: includes/updater.php:279
+msgid "An unknown error occurred"
+msgstr ""
+
+#: includes/updater.php:315
+msgid "The plugin has been updated, but could not be reactivated. Please reactivate it manually."
+msgstr ""
+
+#: includes/updater.php:316
+msgid "Plugin reactivated successfully."
+msgstr ""
+
