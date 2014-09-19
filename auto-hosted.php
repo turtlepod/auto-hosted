@@ -3,7 +3,7 @@
  * Plugin Name: Auto Hosted
  * Plugin URI: http://autohosted.com/
  * Description: Automatic Update Manager for Self Hosted WordPress Themes and Plugins.
- * Version: 0.1.4
+ * Version: 0.1.5
  * Author: David Chandra Purnama
  * Author URI: http://shellcreeper.com/
  *
@@ -17,7 +17,7 @@
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package AutoHosted
- * @version 0.1.4
+ * @version 0.1.5
  * @author David Chandra Purnama <david@shellcreeper.com>
  * @copyright Copyright (c) 2013, David Chandra Purnama
  * @link http://autohosted.com
@@ -33,7 +33,7 @@ load_plugin_textdomain( 'auto-hosted', false, dirname( plugin_basename( __FILE__
 ------------------------------------------ */
 
 /* Set plugin version constant. */
-define( 'AUTOHOSTED_VERSION', '0.1.4' );
+define( 'AUTOHOSTED_VERSION', '0.1.5' );
 
 /* Set constant path to the plugin directory. */
 define( 'AUTOHOSTED_PATH', trailingslashit( plugin_dir_path(__FILE__) ) );
@@ -113,16 +113,6 @@ register_activation_hook( __FILE__, 'auto_hosted_activation' );
  * @since 0.1.0
  */
 function auto_hosted_activation() {
-
-	/* check if other instance of auto hosted active */
-	if ( defined( 'AUTOHOSTED_ACTIVE' ) ) {
-
-		/* deactivate plugin */
-		deactivate_plugins( plugin_basename( __FILE__ ) );
-
-		/* notice to user, error message */
-		wp_die( sprintf( __( 'You need to deactivate Auto Hosted Lite before activating <a href="%s">Auto Hosted</a> plugin.', 'auto-hosted'), 'http://autohosted.com/' ) );
-	}
 
 	/* Get the administrator role. */
 	$role =& get_role( 'administrator' );

@@ -11,6 +11,9 @@ woocommerce integration
 Add hooks to make it extendable, need input from members
 ----------------------------------
 
+= version 0.1.5 (15 May 2013) =
+- remove autohosted plugin active plugin check to deactivate plugin.
+
 
 = version 0.1.4 (15 May 2013) =
 - update validation method, fix bug activation key conditional always return true
