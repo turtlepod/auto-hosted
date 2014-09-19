@@ -1,5 +1,21 @@
 AUTO HOSTED PLUGIN CHANGELOG
 ==================================
+TODO:
+----------------------------------
+test using multisite domain mapping, uploader and zip file bug reported by DJosephDesign
+@link: http://autohosted.com/forums/topic/cant-upload-or-link-zip/
+---
+woocommerce integration
+@link: http://autohosted.com/forums/topic/integrate-activations-with-woocommerce/
+---
+Add hooks to make it extendable, need input from members
+----------------------------------
+
+
+= version 0.1.4 (15 May 2013) =
+- update validation method, fix bug activation key conditional always return true
+  @link: http://autohosted.com/forums/topic/activation-key-isnt-making-a-difference/
+
 
 = version 0.1.3 (24 April 2013) =
 - change function name to make it consistent with the rest.

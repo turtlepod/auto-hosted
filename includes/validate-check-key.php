@@ -32,8 +32,8 @@ function auto_hosted_validate_check_key( $user_agent, $login_name = '', $key = '
 	}
 
 
-	/* set output to false */
-	$output = false;
+	/* set output to true */
+	$output = true;
 
 	/**
 	 * Validate by activation key from the list
@@ -47,6 +47,9 @@ function auto_hosted_validate_check_key( $user_agent, $login_name = '', $key = '
 
 	/* if this repo using activation key by user role */
 	if ( $restricted_by_keys_meta ){
+
+		/* set output to false */
+		$output = false;
 
 		/* make keys as array */
 		$restricted_by_keys_meta = explode( "\n", $restricted_by_keys_meta );
@@ -63,9 +66,6 @@ function auto_hosted_validate_check_key( $user_agent, $login_name = '', $key = '
 		}
 
 	} // end validate by activation key
-	else{
-		$output = true;
-	}
 
 
 	/**
@@ -104,9 +104,6 @@ function auto_hosted_validate_check_key( $user_agent, $login_name = '', $key = '
 
 		} // end user data check
 	} // end restrict by user role
-	else{
-		$output = true;
-	}
 
 	return $output;
 }
