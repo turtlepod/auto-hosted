@@ -14,7 +14,13 @@ Add hooks to make it extendable, need input from members
 CHANGELOG:
 ----------------------------------
 
-= version 0.1.6 (26 June 2013) =
+= version 0.1.7 (10 November 2013) =
+- fix header already sent, from deactivation/activation hook in wp.3.7 (role management)
+- wrap auto_hosted_validate_request() with function exists check
+- wrap auto_hosted_validate_check_key() with function exists check
+
+
+= version 0.1.6 (26 June 2013): Private Update =
 - Fix language string in mb/meta-box.php
 - update language file.
 

@@ -3,7 +3,7 @@
  * Plugin Name: Auto Hosted
  * Plugin URI: http://autohosted.com/
  * Description: Automatic Update Manager for Self Hosted WordPress Themes and Plugins.
- * Version: 0.1.5
+ * Version: 0.1.7
  * Author: David Chandra Purnama
  * Author URI: http://shellcreeper.com/
  *
@@ -17,7 +17,7 @@
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package AutoHosted
- * @version 0.1.5
+ * @version 0.1.7
  * @author David Chandra Purnama <david@shellcreeper.com>
  * @copyright Copyright (c) 2013, David Chandra Purnama
  * @link http://autohosted.com
@@ -33,7 +33,7 @@ load_plugin_textdomain( 'auto-hosted', false, dirname( plugin_basename( __FILE__
 ------------------------------------------ */
 
 /* Set plugin version constant. */
-define( 'AUTOHOSTED_VERSION', '0.1.5' );
+define( 'AUTOHOSTED_VERSION', '0.1.7' );
 
 /* Set constant path to the plugin directory. */
 define( 'AUTOHOSTED_PATH', trailingslashit( plugin_dir_path(__FILE__) ) );
@@ -65,12 +65,29 @@ require_once( AUTOHOSTED_PATH . 'includes/manage-column.php' );
 /* Load functions */
 require_once( AUTOHOSTED_PATH . 'includes/functions.php' );
 
-/* Load validate request functions */
-require_once( AUTOHOSTED_PATH . 'includes/validate-request.php' );
 
-/* Load validate activation key check functions */
-require_once( AUTOHOSTED_PATH . 'includes/validate-check-key.php' );
 
+/* Load Plugable Functions
+------------------------------------------ */
+
+/* Load plugable function */
+add_action( 'plugins_loaded', 'auto_hosted_load_pluggable_function', 11 );
+
+/**
+ * Load Plugable function at 'plugins_loaded' hook.
+ * To create/replace this function, load it at priority 10 or less
+ * 
+ * @since 0.1.7
+ */
+function auto_hosted_load_pluggable_function(){
+
+	/* Load validate request functions */
+	require_once( AUTOHOSTED_PATH . 'includes/validate-request.php' );
+
+	/* Load validate activation key check functions */
+	require_once( AUTOHOSTED_PATH . 'includes/validate-check-key.php' );
+
+}
 
 /* Updater
 ------------------------------------------ */
@@ -115,7 +132,7 @@ register_activation_hook( __FILE__, 'auto_hosted_activation' );
 function auto_hosted_activation() {
 
 	/* Get the administrator role. */
-	$role =& get_role( 'administrator' );
+	$role = get_role( 'administrator' );
 
 	/* If the administrator role exists, add required capabilities for the plugin. */
 	if ( !empty( $role ) ) {
@@ -132,19 +149,6 @@ function auto_hosted_activation() {
 }
 
 
-/* Add active status constant to init hook */
-add_action( 'init', 'auto_hosted_active_check_init', 1 );
-
-/**
- * Auto Hosted Active Status Constants
- * this is to make sure user deactivate lite version before activate this
- * @since 0.1.1
- */
-function auto_hosted_active_check_init(){
-	define( 'AUTOHOSTED_ACTIVE', true );
-}
-
-
 /**
  * Uninstall plugin
  * @since 0.1.0
@@ -152,7 +156,7 @@ function auto_hosted_active_check_init(){
 function auto_hosted_uninstall(){
 
 	/* Get the administrator role. */
-	$role =& get_role( 'administrator' );
+	$role = get_role( 'administrator' );
 
 	/* If the administrator role exists, remove added capabilities for the plugin. */
 	if ( !empty( $role ) ) {

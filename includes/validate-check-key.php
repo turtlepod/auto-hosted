@@ -9,6 +9,8 @@
  * @since 0.1.1
  * @return bool
  */
+if ( ! function_exists( 'auto_hosted_validate_check_key' ) ) :
+
 function auto_hosted_validate_check_key( $user_agent, $login_name = '', $key = '' ){
 
 	/**
@@ -107,3 +109,4 @@ function auto_hosted_validate_check_key( $user_agent, $login_name = '', $key = '
 
 	return $output;
 }
+endif;

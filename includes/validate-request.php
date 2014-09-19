@@ -10,6 +10,8 @@
  * @since 0.1.1
  * @return bool
  */
+if ( ! function_exists( 'auto_hosted_validate_request' ) ) :
+
 function auto_hosted_validate_request( $current_version, $user_agent, $login_name = '', $key = '' ){
 
 	/**
@@ -221,3 +223,4 @@ function auto_hosted_validate_request( $current_version, $user_agent, $login_nam
 
 	return $output;
 }
+endif;
