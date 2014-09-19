@@ -3,7 +3,7 @@
  * Plugin Name: Auto Hosted
  * Plugin URI: http://autohosted.com/
  * Description: Automatic Update Manager for Self Hosted WordPress Themes and Plugins.
- * Version: 0.1.8
+ * Version: 0.1.9
  * Author: David Chandra Purnama
  * Author URI: http://shellcreeper.com/
  *
