@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AutoHosted.com\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-25 14:50+0700\n"
+"POT-Creation-Date: 2013-06-26 21:45+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: dave <david.warna@gmail.com>\n"
 "Language-Team:  <david@shellcreeper.com>\n"
@@ -14,11 +14,6 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: auto-hosted.php:124
-#, php-format
-msgid "You need to deactivate Auto Hosted Lite before activating <a href=\"%s\">Auto Hosted</a> plugin."
-msgstr ""
 
 #: includes/manage-column.php:56
 msgctxt "edit"
@@ -773,5 +768,25 @@ msgstr ""
 
 #: includes/updater.php:583
 msgid "Activation Key"
+msgstr ""
+
+#: mb/meta-box.php:199
+msgid "Upload File"
+msgstr ""
+
+#: mb/meta-box.php:210
+msgid "File:"
+msgstr ""
+
+#: mb/meta-box.php:210
+msgid "Download"
+msgstr ""
+
+#: mb/meta-box.php:210
+msgid "Remove"
+msgstr ""
+
+#: mb/meta-box.php:213
+msgid "File: <strong>not supported</strong>, only zip file supported."
 msgstr ""
 

@@ -9,7 +9,15 @@ woocommerce integration
 @link: http://autohosted.com/forums/topic/integrate-activations-with-woocommerce/
 ---
 Add hooks to make it extendable, need input from members
+
+==================================
+CHANGELOG:
 ----------------------------------
+
+= version 0.1.6 (26 June 2013) =
+- Fix language string in mb/meta-box.php
+- update language file.
+
 
 = version 0.1.5 (15 May 2013) =
 - remove autohosted plugin active plugin check to deactivate plugin.

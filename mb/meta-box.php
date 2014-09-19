@@ -196,7 +196,7 @@ class Auto_Hosted_Metabox {
 					if ( 'url' == $field['allow'] || ( is_array( $field['allow'] ) && in_array( 'url', $field['allow'] ) ) )
 						$input_type_url="text";
 					echo '<input class="ahs_upload_file" type="' . $input_type_url . '" size="45" id="', $field['id'], '" name="', $field['id'], '" value="', $meta, '" />';
-					echo '<input class="ahs_upload_button button" type="button" value="Upload File" />';
+					echo '<input class="ahs_upload_button button" type="button" value="' . __("Upload File", "auto-hosted") . '" />';
 					echo '<input class="ahs_upload_file_id" type="hidden" id="', $field['id'], '_id" name="', $field['id'], '_id" value="', get_post_meta( $post->ID, $field['id'] . "_id",true), '" />';
 					echo '<p class="ahs_metabox_description">', $field['desc'], '</p>';
 					echo '<div id="', $field['id'], '_status" class="ahs_upload_status">';	
@@ -207,10 +207,10 @@ class Auto_Hosted_Metabox {
 								for( $i = 0; $i < count( $parts ); ++$i ) {
 									$title = $parts[$i];
 								}
-								echo 'File: <strong>', $title, '</strong>&nbsp;&nbsp;&nbsp; (<a href="', $meta, '" rel="external">Download</a> / <a href="#" class="ahs_remove_file_button" rel="', $field['id'], '">Remove</a>)';
+								echo __( 'File:', 'auto-hosted' ) . ' <strong>', $title, '</strong>&nbsp;&nbsp;&nbsp; (<a href="', $meta, '" rel="external">' . __( 'Download', 'auto-hosted' ) . '</a> / <a href="#" class="ahs_remove_file_button" rel="', $field['id'], '">' . __( 'Remove', 'auto-hosted' ) . '</a>)';
 							}
 							else {
-								echo 'File: <strong>not supported</strong>, only zip file supported.';
+								echo __( 'File: <strong>not supported</strong>, only zip file supported.', 'auto-hosted' );
 							}
 						}
 					echo '</div>'; 
